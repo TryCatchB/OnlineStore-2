@@ -1,0 +1,21 @@
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 195px;
+
+    .navList {
+        display: flex;
+        gap: 20px;
+    }
+
+    .navItem {
+        font-size: 1rem;
+        color: #555;
+
+        &:hover {
+            color: #3665f3;
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import bell from "./icons/bell.png";
+import favourite from "./icons/favourite.png";
 import cart from "./icons/shopping-cart.png";
 import logo from "./icons/shopping-online.png";
 import styles from "./Header.module.css";
@@ -13,27 +13,24 @@ const Header: FC = () => {
             <img src={logo} alt="Logo" />
           </a>
         </h1>
-        <div className="categories">
-          <button type="button">Categories</button>
-          <div className="list">
-            <ul>
-              <li>electronics</li>
-              <li>jewelery</li>
-              <li>men's clothing</li>
-              <li>women's clothing</li>
-            </ul>
-          </div>
-        </div>
-        <form action="#" className="form">
-          <input type="text" />
-          <button type="button">Search</button>
-        </form>
-        <div className="control-panel">
-          <button className="favourite" type="button">
-            <img src={bell} alt="Bell" />
+        <form action="#" className={styles.form}>
+          <input
+            className={styles.formInput}
+            placeholder="Search"
+            type="text"
+          />
+          <button className={styles.formButton} type="button">
+            Search
           </button>
-          <button className="cart" type="button">
+        </form>
+        <div className={styles.controlPanel}>
+          <button type="button">
+            <img src={favourite} alt="Favourite" />
+            <span>0</span>
+          </button>
+          <button type="button">
             <img src={cart} alt="Cart" />
+            <span>0</span>
           </button>
         </div>
       </div>
