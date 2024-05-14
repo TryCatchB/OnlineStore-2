@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 const Electronics: FC = () => {
-  return <section></section>;
+  return <div>Electronics</div>;
 };
 
 export default Electronics;

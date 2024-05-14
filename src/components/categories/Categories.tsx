@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Categories.module.css";
 
 const Categories: FC = () => {
@@ -6,16 +7,16 @@ const Categories: FC = () => {
     <div className={styles.nav}>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <a href="#">Electronics</a>
+          <Link to="/electronics">Electronics</Link>
         </li>
         <li className={styles.navItem}>
-          <a href="#">Jewelery</a>
+          <Link to="/jewelry">Jewelry</Link>
         </li>
         <li className={styles.navItem}>
-          <a href="#">Men's clothing</a>
+          <Link to="/mens-clothing">Men's clothing</Link>
         </li>
         <li className={styles.navItem}>
-          <a href="#">Women's clothing</a>
+          <Link to="/womens-clothing">Women's clothing</Link>
         </li>
       </ul>
     </div>
