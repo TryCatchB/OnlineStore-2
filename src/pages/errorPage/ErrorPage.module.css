@@ -2,8 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 50px;
 }
 
 .errorMessage {
-    color: red
+    color: red;
+    font-size: 30px;
 }
