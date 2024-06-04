@@ -12,7 +12,7 @@
     align-items: center;
     min-height: 128px;
     border: 1px solid #ddd;
-    padding: 10px 120px;
+    padding: 10px 50px;
 
     & * {
        flex-grow: 1;
