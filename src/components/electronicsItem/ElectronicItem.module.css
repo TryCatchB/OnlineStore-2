@@ -1,0 +1,13 @@
+.content {
+    padding-top: 250px;
+    padding-left: 50px;
+
+    .item {
+        display: flex;
+        align-items: center;
+    }
+
+    & .image {
+        max-width: 300px;
+    }
+}

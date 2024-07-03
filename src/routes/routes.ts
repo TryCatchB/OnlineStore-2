@@ -1,3 +1,4 @@
+import ElectronicsItem from "../components/electronicsItem/ElectronicsItem";
 import Electronics from "../pages/electronics/Electronics";
 import Home from "../pages/home/Home";
 import Jewelry from "../pages/jewelry/Jewelry";
@@ -10,4 +11,5 @@ export const routes = [
   { path: "/jewelry", component: Jewelry },
   { path: "/mens-clothing", component: MensClothing },
   { path: "/womens-clothing", component: WomensClothing },
+  { path: "/details/:id", component: ElectronicsItem },
 ];

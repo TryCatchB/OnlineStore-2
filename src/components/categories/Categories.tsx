@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./Categories.module.css";
 
 const Categories: FC = () => {
@@ -7,16 +7,36 @@ const Categories: FC = () => {
     <div className={styles.nav}>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <Link to="/electronics">Electronics</Link>
+          <NavLink
+            to="/electronics"
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
+          >
+            Electronics
+          </NavLink>
         </li>
         <li className={styles.navItem}>
-          <Link to="/jewelry">Jewelry</Link>
+          <NavLink
+            to="/jewelry"
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
+          >
+            Jewelry
+          </NavLink>
         </li>
         <li className={styles.navItem}>
-          <Link to="/mens-clothing">Men's clothing</Link>
+          <NavLink
+            to="/mens-clothing"
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
+          >
+            Men's clothing
+          </NavLink>
         </li>
         <li className={styles.navItem}>
-          <Link to="/womens-clothing">Women's clothing</Link>
+          <NavLink
+            to="/womens-clothing"
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
+          >
+            Women's clothing
+          </NavLink>
         </li>
       </ul>
     </div>

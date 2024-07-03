@@ -1,35 +1,32 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 import { useFetchElectronicsQuery } from "../../slices/electronicsSlice";
-import styles from "./ElectronicsItems.module.css";
 import Loader from "../loader/Loader";
+import ErrorMessage from "../error/ErrorMessage";
+import Categories from "../categories/Categories";
+import styles from "./ElectronicsItems.module.css";
 
 const ElectronicsItems: FC = () => {
   const { data, isLoading, error } = useFetchElectronicsQuery({});
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  const createLink = (id: number) => `/details/${id}`;
 
-  const errorMessage = error
-    ? "status" in error
-      ? `Error: ${error.status} - ${error.data}`
-      : "Error: An unknown error occurred."
-    : "";
+  if (isLoading) return <Loader />;
 
   return (
-    <div className={styles.content}>
-      {error && <p>{errorMessage}</p>}
-      {data.map((item) => (
-        <div className={styles.item} key={item.id}>
-          <div className={styles.itemContent}>
-            <img className={styles.image} src={item.image} alt="image" />
-            <h3 className={styles.title}>{item.title}</h3>
-            <span className={styles.price}>Price: {item.price}</span>
-            <p className={styles.rate}>Rate: {item.rating.rate}</p>
-            <p className={styles.count}>Count: {item.rating.count}</p>
-          </div>
-        </div>
-      ))}
+    <div>
+      <Categories />
+      <div className={styles.content}>
+        {error && <ErrorMessage error={error} />}
+        {data.map((item) => (
+          <Link to={createLink(item.id)} className={styles.item} key={item.id}>
+            <div className={styles.itemContent}>
+              <img className={styles.image} src={item.image} alt="image" />
+              <h3 className={styles.title}>{item.title}</h3>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
