@@ -4,10 +4,45 @@
 
     .item {
         display: flex;
+        gap: 170px;
         align-items: center;
     }
 
     & .image {
         max-width: 300px;
+    }
+
+    .itemDescription {
+        font-size: 1rem;
+
+        & .title {
+
+        }
+
+        & .description {
+
+        }
+
+        & .price {
+
+        }
+
+        & .rating {
+
+        }
+
+        & .rate {
+
+        }
+
+        & .count {
+
+        }
+
+        & .title,
+        & .description,
+        & .price {
+            margin-bottom: 10px;
+        }
     }
 }

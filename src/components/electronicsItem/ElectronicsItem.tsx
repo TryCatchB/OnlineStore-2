@@ -20,7 +20,18 @@ const ElectronicsItem: FC = () => {
       {error && <ErrorMessage error={error} />}
       <div className={styles.item}>
         <img className={styles.image} src={item.image} alt="image" />
-        <h3 className={styles.title}>{item.title}</h3>
+        <div className={styles.itemDescription}>
+          <h3 className={styles.title}>{item.title}</h3>
+          <p className={styles.description}>{item.description}</p>
+          <p className={styles.price}>
+            Price: <span>{item.price}</span>
+          </p>
+          <ul className={styles.rating}>
+            Rating:
+            <li className={styles.rate}>Rate: {item.rating.rate}</li>
+            <li className={styles.count}>Count: {item.rating.count}</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
